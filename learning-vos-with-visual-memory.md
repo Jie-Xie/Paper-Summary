@@ -6,13 +6,13 @@ Create binary segmentation of objects that moved in at least one frame with vide
 ## Model Architecture
 
 ### Appearance Network
-Input: RGB frame (3 x w x h) ->
-Pretrained model (freezed): up to the fc6 layer of largeFOV version of the DeepLab network pretrained on PASCAL VOC 2012 ->
-(1 x 1 convolutional layer + tanh) x 2
-Output: (128 x w/8 x h/8)
+- Input: RGB frame (3 x w x h) -> 
+- Pretrained model (freezed): up to the fc6 layer of largeFOV version of the DeepLab network pretrained on PASCAL VOC 2012 -> 
+- (1 x 1 convolutional layer + tanh) x 2 
+- Output: (128 x w/8 x h/8)
 
 ### Motion Network
-Input: optical flow ->
+Input: optical flow -> 
 Pretrained model (freezed): MP-Net (w/4 x h/4)->
 2 x 2 max pooling layer with stride 2
 Output: motion prediction (w/8 x h/8)
